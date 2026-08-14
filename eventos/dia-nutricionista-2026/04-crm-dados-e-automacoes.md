@@ -7,14 +7,14 @@ O CRM deve concentrar a **jornada de relacionamento com a convidada**.
 O ERP/Bling permanece como sistema operacional para processos como pedido, estoque, faturamento e contas.
 
 ```text
-WhatsApp
+WhatsApp Business — operação manual
    ↓
-Landing page
+Experiência Digital / Landing page
    ↓
 CRM / Evento
    ├── convite
-   ├── interação
    ├── confirmação
+   ├── recusa
    ├── presença
    └── pós-evento
             ↓
@@ -24,13 +24,27 @@ CRM / Evento
       quando houver operação comercial
 ```
 
-## 2. Entidades conceituais
+## 2. Regra de identificação
+
+O projeto utiliza **um link geral**, sem token e sem URL nominal.
+
+Portanto:
+
+- acesso à página = interação anônima/agregada;
+- confirmação = momento em que a convidada informa identidade;
+- CRM = responsável por localizar o contato existente e associá-lo ao evento.
+
+O sistema não deve tentar adivinhar quem acessou a página.
+
+## 3. Entidades conceituais
 
 ### Contato / Nutricionista
 
 Cadastro principal da profissional.
 
-Campos existentes no CRM devem ser reaproveitados. O evento não deve criar um cadastro paralelo.
+Os campos existentes no CRM devem ser reaproveitados.
+
+O evento não deve criar cadastro paralelo.
 
 ### Evento
 
@@ -45,7 +59,7 @@ Campos mínimos:
 - `local`
 - `capacidade`
 
-### Convite de evento
+### Participação / convite
 
 Relação entre uma nutricionista e um evento.
 
@@ -54,153 +68,152 @@ Campos sugeridos:
 - `evento_convite_id`
 - `evento_id`
 - `contato_id`
-- `token`
 - `status`
 - `enviado_em`
-- `acessado_em`
 - `confirmado_em`
 - `recusado_em`
 - `presenca_em`
 - `ultimo_contato_em`
 - `origem_convite`
+- `observacoes`
 
-## 3. Status da jornada
+**Não utilizar `token` como campo obrigatório do evento**, pois o link geral foi escolhido para esta ação.
 
-O status deve refletir a situação atual, sem perder os timestamps dos eventos anteriores.
+## 4. Status da jornada
+
+O status atual deve refletir a situação da convidada sem apagar os timestamps dos eventos anteriores.
 
 ```text
 CONVITE_PREPARADO
       ↓
 CONVITE_ENVIADO
       ↓
-ACESSOU
-      ↓
 ┌───────────────┬─────────────────┐
 │               │                 │
 ▼               ▼                 ▼
 CONFIRMADA   RECUSADA          PENDENTE
-│                                │
-▼                                ▼
-PRESENÇA                     LEMBRETES
+│
+▼
+PRESENÇA
 │
 ▼
 PÓS-EVENTO
 ```
 
-### Observação
+`PENDENTE` não é um estado final.
 
-`PENDENTE` não é um estado final. É a condição de quem recebeu/visitou o convite e ainda não registrou uma decisão.
+## 5. Eventos de sistema
 
-## 4. Eventos de sistema
-
-Além do status atual, registrar eventos importantes:
+Registrar, quando aplicável:
 
 | Evento | Quando ocorre |
 |---|---|
 | `convite_preparado` | convite pronto para envio |
-| `convite_enviado` | mensagem disparada com sucesso |
-| `landing_acessada` | convite individual abriu a página |
+| `convite_enviado` | mensagem enviada manualmente e registrada pela equipe |
+| `landing_acessada` | página acessada; métrica agregada, sem atribuição individual |
 | `presenca_confirmada` | confirmação registrada |
 | `presenca_recusada` | impossibilidade registrada |
-| `lembrete_enviado` | lembrete disparado |
+| `contato_identificado` | dados da confirmação associados a contato do CRM |
+| `lembrete_realizado` | equipe realizou follow-up manual |
 | `presenca_registrada` | presença física registrada |
-| `pos_evento_enviado` | comunicação pós-evento disparada |
+| `pos_evento_realizado` | comunicação pós-evento registrada |
 
-Os eventos servem para auditoria, métricas e automação.
+Os eventos servem para auditoria, métricas e organização operacional.
 
-## 5. Automação de WhatsApp
+## 6. WhatsApp — operação manual
 
-### Fluxo 1 — Convite
+Não haverá automação de mensagens de WhatsApp na primeira versão.
 
-Disparar para cada convidada com o link individual.
+O WhatsApp Business da Santa Luzia será utilizado pela equipe para:
 
-### Fluxo 2 — Follow-up de não resposta
+- convite;
+- lembrete de pendentes;
+- confirmação/agradecimento;
+- informações logísticas;
+- comunicação do dia do evento;
+- pós-evento.
 
-Critério conceitual:
+O CRM deve ajudar a equipe a saber **quem precisa de contato**, mas não deve disparar automaticamente essas mensagens.
 
-`convite enviado + prazo definido + sem confirmação/recusa`
+## 7. Fluxo de confirmação
 
-A automação envia lembrete sem alterar artificialmente o status para ausência.
+Ao receber o formulário:
 
-### Fluxo 3 — Confirmação
+1. validar nome e WhatsApp;
+2. localizar contato existente no CRM;
+3. se encontrado, reutilizar o contato;
+4. associar contato ao evento;
+5. registrar confirmação ou recusa;
+6. registrar data/hora;
+7. impedir duplicidade de relação contato/evento;
+8. apresentar feedback na própria página.
 
-Ao confirmar:
+### Se o contato não existir
 
-1. atualizar a relação convidada/evento;
-2. registrar `presenca_confirmada`;
-3. registrar data/hora;
-4. cancelar lembretes de confirmação ainda pendentes;
-5. enviar mensagem de agradecimento;
-6. iniciar jornada pré-evento.
+Seguir a regra geral de cadastro da Santa Luzia, evitando criar um cadastro paralelo específico para o evento.
 
-### Fluxo 4 — Recusa
+## 8. Enriquecimento posterior
 
-Ao informar que não poderá comparecer:
+A confirmação não deve coletar perfil profissional detalhado.
 
-1. atualizar status para `RECUSADA`;
-2. registrar evento de recusa;
-3. cancelar lembretes;
-4. agradecer;
-5. manter o contato disponível para relacionamento futuro.
+Após a confirmação, a equipe poderá complementar:
 
-### Fluxo 5 — Pré-evento
+- atuação Home Care;
+- hospitalar;
+- clínica;
+- consultório;
+- especialidades/interesses;
+- relacionamento prévio;
+- potencial de parceria.
 
-Enviar informações práticas conforme calendário definido.
+Sempre que possível, aproveitar dados já existentes no CRM.
 
-### Fluxo 6 — Pós-evento
+## 9. Presença
 
-Enviar agradecimento e conteúdo pós-evento para quem compareceu. Para quem não compareceu, usar comunicação diferente e não presumir participação.
-
-## 6. Personalização pós-evento
-
-Depois da presença, a nutricionista pode receber uma próxima ação conforme perfil.
-
-Exemplos:
-
-```text
-PRESENÇA
-   ↓
-PERFIL
-   ├── Home Care → relacionamento Home Care
-   ├── Hospitalar → soluções hospitalares
-   ├── Clínica → soluções clínicas
-   └── Outro → relacionamento geral
-```
-
-A segmentação deve utilizar dados já existentes no CRM sempre que possível.
-
-## 7. Prevenção de duplicidade
-
-A confirmação de presença deve atualizar a relação entre contato e evento.
+A presença física deve atualizar a mesma relação contato/evento.
 
 Não criar:
 
 - novo contato;
-- novo cadastro de nutricionista;
-- novo lead apenas para a confirmação.
+- novo lead apenas para check-in;
+- novo cadastro de nutricionista.
 
-Caso a profissional ainda não exista no CRM, a criação do contato deve seguir a regra geral de cadastro definida para a Santa Luzia.
+## 10. Integrações
 
-## 8. Integrações
+### Previstas
 
-Integrações previstas conceitualmente:
+- **Landing page ↔ Supabase** — confirmação, estados e eventos;
+- **Supabase ↔ CRM** — associação com contato e status;
+- **WhatsApp Business** — operação manual, fora de automação;
+- **Bling/ERP** — somente quando surgir operação comercial/administrativa pertencente ao ERP.
 
-- **WhatsApp** — convite e mensagens;
-- **Landing page** — captura de interação e confirmação;
-- **CRM** — cadastro e jornada;
-- **n8n ou motor de automação** — orquestração;
-- **Bling/ERP** — somente quando surgir operação comercial/administrativa que pertença ao ERP.
+### Automação
 
-A tecnologia definitiva de cada integração ainda está pendente de decisão.
+A primeira versão não depende de n8n para WhatsApp.
 
-## 9. Privacidade e governança
+Se houver automação futura, ela deve ser adicionada sem alterar a regra central do projeto.
 
-Coletar apenas dados necessários para convite, confirmação, logística e relacionamento planejado.
+## 11. Prevenção de duplicidade
 
-O projeto deve definir antes da implantação:
+A relação entre contato e evento deve possuir regra de unicidade conceitual:
 
-- finalidade dos dados coletados;
+`contato_id + evento_id = uma participação`
+
+Uma segunda confirmação deve atualizar o registro existente, e não criar outra participação.
+
+## 12. Privacidade e governança
+
+A página deve informar de forma simples que os dados coletados são utilizados para:
+
+- confirmar presença;
+- organizar o evento;
+- registrar participação;
+- realizar o relacionamento planejado pela Santa Luzia.
+
+Definir antes da implantação:
+
+- finalidade dos dados;
 - permissões de acesso;
 - prazo de retenção;
 - política de exclusão/anonimização, quando aplicável;
-- responsáveis pela gestão do dado.
+- responsáveis pela gestão.

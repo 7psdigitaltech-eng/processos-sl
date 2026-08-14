@@ -1,84 +1,117 @@
 # 06 — Backlog e pendências
 
-## 1. Prioridade P0 — necessárias antes do desenvolvimento
+## 1. Decisões já fechadas
 
-- [ ] Confirmar data oficial do evento (29/08/2026).
-- [ ] Confirmar horário.
-- [ ] Confirmar local e endereço.
-- [ ] Definir capacidade do evento.
-- [ ] Fechar lista de convidadas.
-- [ ] Definir regra de acompanhante.
-- [ ] Definir canal/provedor oficial do WhatsApp.
-- [ ] Definir tecnologia da landing page.
-- [ ] Definir onde ficará o cadastro do evento no CRM.
-- [ ] Definir formato do token/link individual.
-- [ ] Definir responsáveis por cada etapa.
+- [x] Data: 29/08/2026.
+- [x] Início: 19h.
+- [x] Local: YBY Condomínio Boutique, Ananindeua/PA.
+- [x] Endereço: Travessa Thenry, BR-316, S/N, Ananindeua - PA, 67113-120.
+- [x] Capacidade estimada: aproximadamente 60 pessoas.
+- [x] Convite individual, sem acompanhante.
+- [x] Dress code: social/coquetel.
+- [x] Estacionamento próprio.
+- [x] WhatsApp de dúvidas: (91) 99294-4871.
+- [x] Nome do projeto: Experiência Digital — Dia do Nutricionista 2026.
+- [x] Link geral para todas as convidadas.
+- [x] Sem token ou URL nominal.
+- [x] Confirmação em modal na própria página.
+- [x] Confirmação primeiro → enriquecimento depois.
+- [x] WhatsApp Business operado manualmente.
+- [x] CRM atual da Santa Luzia, no kanban específico de nutricionistas.
+- [x] Supabase como camada de dados da experiência.
+- [x] Marcas: NUTRO e PRODIET.
+- [x] Evento como protagonista; produtos não serão apresentados em formato de venda.
 
-## 2. Prioridade P1 — necessárias para implantação
+## 2. Prioridade P0 — necessárias antes do desenvolvimento final
+
+- [ ] Definir data limite de confirmação.
+- [ ] Fechar sequência definitiva da programação.
+- [ ] Definir responsável pelo check-in.
+- [ ] Definir como o contato será localizado no CRM pelo WhatsApp informado na confirmação.
+- [ ] Definir regra de criação de contato quando a nutricionista ainda não existir no CRM.
+- [ ] Definir política de privacidade definitiva.
+- [ ] Definir domínio/subdomínio da experiência na VPS.
+- [ ] Definir estratégia de backup/monitoramento da página e banco.
+
+## 3. Prioridade P1 — conteúdo e implementação
 
 - [ ] Finalizar copy da landing page.
-- [ ] Finalizar identidade visual digital do evento.
-- [ ] Publicar landing page.
+- [ ] Finalizar identidade visual digital.
+- [ ] Preparar imagens do ambiente.
+- [ ] Preparar logo oficial Santa Luzia.
+- [ ] Preparar logos oficiais NUTRO e PRODIET.
+- [ ] Definir produtos/soluções que eventualmente serão destacados.
+- [ ] Publicar landing page na VPS.
 - [ ] Criar evento no CRM.
-- [ ] Criar relação convidada/evento.
-- [ ] Configurar estados e automações.
-- [ ] Configurar mensagens de WhatsApp.
+- [ ] Criar relação nutricionista/evento.
 - [ ] Implementar confirmação/recusa.
+- [ ] Implementar prevenção de duplicidade.
 - [ ] Implementar registro de presença.
-- [ ] Criar dashboard/relatório.
-- [ ] Realizar teste com convidados internos.
+- [ ] Criar indicadores/relatório.
+- [ ] Realizar teste ponta a ponta com convidados internos.
 
-## 3. Prioridade P2 — melhoria da experiência
+## 4. Prioridade P2 — melhoria da experiência
 
-- [ ] Personalizar saudação com nome.
-- [ ] Exibir conteúdo pós-confirmação.
-- [ ] Personalizar conteúdo pós-evento por perfil.
+- [ ] Preservar visualmente o estado de confirmação no mesmo navegador.
+- [ ] Criar conteúdo pós-evento.
 - [ ] Criar galeria/fotos pós-evento.
 - [ ] Criar CTA de relacionamento com equipe Santa Luzia.
 - [ ] Registrar interações relevantes para futuras ações.
+- [ ] Personalizar relacionamento pós-evento por perfil profissional.
 
-## 4. Decisões de produto/negócio em aberto
+## 5. Decisões de produto/negócio
 
 ### Individualização do convite
 
-**Decisão recomendada:** utilizar token único por convidada.
+**Decisão:** link geral para todas as convidadas. Não utilizar token ou URL nominal.
 
 ### Confirmação
 
-**Decisão recomendada:** confirmar/recusar na própria landing page, com poucos campos.
+**Decisão:** confirmar/recusar na própria landing page, usando modal e poucos campos.
 
 ### Cadastro
 
-**Decisão recomendada:** reaproveitar contato existente no CRM e criar apenas a relação com o evento.
+**Decisão:** reaproveitar contato existente no CRM e criar apenas a relação com o evento.
+
+### Dados
+
+**Decisão:** confirmação exige somente o necessário. Enriquecimento profissional ocorre depois.
+
+### WhatsApp
+
+**Decisão:** operação manual pelo WhatsApp Business. Não depender de automação de mensagens na primeira versão.
 
 ### Comercialização
 
-**Decisão recomendada:** não transformar a confirmação em fluxo de venda. Usar a página para aproximação institucional e apresentação das marcas.
+**Decisão:** não transformar a confirmação em fluxo de venda. A página apresenta Santa Luzia, NUTRO e PRODIET de forma institucional e contextual.
 
 ### Pós-evento
 
-**Decisão recomendada:** criar uma jornada específica para participantes e outra para convidadas que não compareceram.
+**Decisão:** criar jornada específica para participantes e tratamento diferente para convidadas que não compareceram.
 
-## 5. Critério de pronto — MVP
+## 6. Critério de pronto — MVP
 
 O MVP pode ser considerado pronto quando uma convidada conseguir:
 
 1. receber o convite pelo WhatsApp;
-2. abrir o link individual;
+2. abrir o link geral;
 3. visualizar os detalhes essenciais;
-4. confirmar ou recusar presença;
-5. receber a comunicação correspondente;
-6. ter a informação gravada no CRM;
-7. ter a presença marcada no evento;
-8. entrar automaticamente na jornada pós-evento.
+4. abrir o modal de confirmação;
+5. confirmar ou recusar presença;
+6. continuar navegando pela experiência;
+7. ter a informação gravada no CRM sem duplicidade;
+8. ter a presença marcada no evento;
+9. entrar na jornada pós-evento adequada.
 
-## 6. Próxima etapa recomendada
+## 7. Próxima etapa recomendada
 
-Depois que P0 estiver fechado, transformar este backlog em tarefas técnicas e operacionais separadas:
+Transformar o planejamento em tarefas separadas:
 
-- **Produto/UX** — landing page e experiência;
-- **CRM** — entidades, campos e estados;
-- **Automação** — WhatsApp e n8n/motor definido;
-- **Operação** — lista, convite, check-in e follow-up;
-- **Marketing** — copy, identidade, marcas e conteúdo;
+- **Produto/UX** — wireframe e interface da experiência;
+- **Copy** — refinamento dos textos e validação de claims;
+- **Frontend** — implementação da landing page;
+- **Supabase** — tabelas, regras e eventos;
+- **CRM** — integração e kanban de nutricionistas;
+- **Operação** — lista, WhatsApp, check-in e follow-up;
+- **Marketing** — identidade, fotos e ativos de marcas;
 - **Dados** — indicadores e relatório.

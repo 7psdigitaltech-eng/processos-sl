@@ -1,189 +1,609 @@
-# 03 — Landing page do evento
+# 03 — Landing page / Experiência Digital
 
-## 1. Objetivo
+## 1. Conceito
 
-Criar uma landing page responsiva, elegante e de baixa fricção que funcione como extensão do convite recebido pelo WhatsApp.
+**Nome do projeto:** Experiência Digital — Dia do Nutricionista 2026
 
-A página tem três objetivos, nesta ordem:
+A landing page será uma experiência digital do evento, e não uma página comercial convencional.
 
-1. **Encantar**
-2. **Confirmar**
-3. **Aproximar**
+### Objetivos, nesta ordem
 
-Não deve ser construída como catálogo ou página de vendas.
+1. **Encantar** — transmitir exclusividade, cuidado e expectativa.
+2. **Confirmar** — permitir confirmação simples e rápida.
+3. **Aproximar** — apresentar Santa Luzia, NUTRO e PRODIET de forma contextualizada.
 
-## 2. Acesso individualizado
+### Princípio central
 
-### Recomendação
+> **O evento é o protagonista.**
 
-Cada convite deve receber um identificador único.
+A página deve parecer uma extensão sofisticada do convite, não um catálogo de produtos com um formulário de RSVP.
 
-Exemplo conceitual:
+---
 
-```text
-/evento/29-08?convite=8F72K
-```
+## 2. Dados do evento
 
-O identificador deve permitir que o sistema localize a convidada sem exigir que ela redigite informações já conhecidas pela Santa Luzia.
+- **Data:** 29/08/2026
+- **Início:** 19h
+- **Término:** sem horário exato; a festa poderá avançar após 00h
+- **Local:** YBY Condomínio Boutique
+- **Endereço:** Travessa Thenry, BR-316, S/N, Ananindeua - PA, 67113-120
+- **Público:** nutricionistas convidadas
+- **Quantidade estimada:** aproximadamente 60 pessoas
+- **Convite:** individual, sem acompanhante
+- **Dress code:** social / coquetel
+- **Estacionamento:** próprio do condomínio
+- **Contato:** (91) 99294-4871
 
-### Resultado esperado
+Link de localização fornecido para uso no botão de mapa/direções:
+https://share.google/31qdnR1U4QYddPAwy
 
-Ao abrir a página, o sistema pode reconhecer a convidada e exibir uma saudação personalizada, por exemplo:
+---
 
-> Olá, Ana! Preparamos este momento especialmente para você.
+## 3. Acesso
 
-### Regra de segurança
+Será utilizado **um link geral**, igual para todas as convidadas.
 
-O identificador do convite não deve expor dados pessoais diretamente na URL. A implementação deve usar um token/identificador sem significado semântico e validar o vínculo no backend.
+Não haverá:
 
-## 3. Estrutura recomendada da página
+- token;
+- URL nominal;
+- identificador individual no link;
+- personalização obrigatória antes da confirmação.
 
-### Bloco 1 — Hero
+### Consequência técnica
 
-Elementos:
+A visita à landing page poderá ser contabilizada de forma agregada.
 
-- marca Santa Luzia;
-- identidade visual do convite;
-- “Save the Date”;
-- data 29/08;
-- “Jantar Comemorativo em Homenagem ao Dia do Nutricionista”;
-- frase curta de posicionamento;
-- CTA principal.
+A identificação da convidada acontecerá no momento da confirmação, por meio de nome + WhatsApp, permitindo localizar o contato correspondente no CRM e associá-lo ao evento.
 
-CTA:
+A página não deve presumir que um acesso anônimo pertence a determinada nutricionista.
 
-**Confirmar minha presença**
+---
 
-### Bloco 2 — Uma noite especial
+# 4. Arquitetura da página
 
-Apresentar os principais elementos da experiência:
+## Bloco 01 — Hero / convite
 
-- celebração;
-- networking;
-- jantar;
-- apresentação das linhas Nutro e Pro Diet;
-- valorização da profissão.
+### Objetivo
 
-### Bloco 3 — Informações do evento
+Reproduzir a sensação do convite digital e gerar vontade de participar.
 
-Quando definidos:
+### Elementos
 
-- data;
-- horário;
-- local;
-- endereço;
-- mapa/direções;
-- estacionamento;
-- dress code;
-- outras orientações práticas.
+- logo oficial da Santa Luzia;
+- composição visual premium inspirada no convite;
+- título principal;
+- data, horário e local;
+- CTA de confirmação.
 
-### Bloco 4 — Confirmação
+### Não utilizar
 
-Título sugerido:
+**SAVE THE DATE** não faz parte da versão definitiva da landing page. Era apenas uma referência do convite.
 
-> Confirme sua presença
+### Direção de conteúdo
 
-Texto de apoio:
+**Título:**
 
-> Será uma alegria receber você neste momento especial.
+> **Uma noite para celebrar quem transforma a nutrição em cuidado e qualidade de vida.**
 
-Campos recomendados:
+**Apoio:**
 
-- nome — preenchido quando possível;
-- WhatsApp — preenchido quando possível;
-- e-mail — somente se necessário para a operação;
-- resposta de presença.
+> Jantar comemorativo em homenagem ao Dia do Nutricionista.
 
-Ações:
+**Informações:**
 
-- **Confirmar presença**
-- **Não poderei comparecer**
+> **29 de agosto · 19h**  
+> **YBY Condomínio Boutique · Ananindeua/PA**
 
-### Bloco 5 — Confirmação concluída
+### CTA principal
 
-Após confirmação, exibir uma experiência específica para quem confirmou.
+**CONFIRMAR MINHA PRESENÇA**
 
-Exemplo:
+O CTA abre o modal de confirmação. Não redireciona para outra página.
 
-> Presença confirmada! ✨
+### UX mobile
+
+Considerar CTA de alta visibilidade e, se necessário, CTA fixo discreto na parte inferior durante a navegação em dispositivos móveis.
+
+---
+
+## Bloco 02 — Uma noite preparada para você
+
+### Objetivo
+
+Explicar o propósito emocional do encontro antes de apresentar marcas.
+
+### Título
+
+> **Uma noite preparada especialmente para você.**
+
+### Direção de texto
+
+> No dia 29 de agosto, a Santa Luzia reunirá nutricionistas para uma noite de celebração, conexão e reconhecimento.
 >
+> Um encontro pensado para valorizar profissionais que fazem da nutrição uma parte essencial do cuidado e da qualidade de vida.
+
+O texto final pode ser refinado durante a fase de copywriting.
+
+---
+
+## Bloco 03 — A experiência
+
+Apresentar quatro pilares visuais:
+
+### Recepção
+
+Um momento para acolher e receber as convidadas.
+
+### Conexões
+
+Networking e aproximação entre profissionais.
+
+### Gastronomia
+
+Jantar e experiência preparados especialmente para a ocasião.
+
+### Celebração
+
+Uma noite para comemorar a profissão e aproveitar o encontro.
+
+### Frase de apoio
+
+> **Uma noite para celebrar. Uma oportunidade para se conectar.**
+
+---
+
+## Bloco 04 — Informações do evento
+
+### Título
+
+> **Tudo preparado para receber você.**
+
+Exibir em cards ou composição editorial:
+
+- **29/08/2026** — sábado;
+- **a partir das 19h**;
+- **YBY Condomínio Boutique**;
+- **Ananindeua — PA**;
+- **Social / Coquetel**;
+- **Estacionamento próprio**.
+
+Mensagem complementar:
+
+> Convite individual e exclusivo para nutricistas convidadas.
+
+---
+
+## Bloco 05 — Como será a noite
+
+Não utilizar cronograma rígido porque o encerramento não possui horário exato.
+
+### Sequência preliminar
+
+**19h — Recepção**  
+Chegada, acolhimento e welcome drink.
+
+**Abertura**  
+Boas-vindas e homenagem às nutricionistas.
+
+**Conexões**  
+Momento inicial de networking e acomodação.
+
+**Santa Luzia + marcas parceiras**  
+Apresentação breve e institucional.
+
+**Jantar**  
+Experiência gastronômica e relacionamento.
+
+**Celebração**  
+Música, confraternização e festa.
+
+### Regra de conteúdo
+
+A apresentação de Santa Luzia, NUTRO, PRODIET e eventuais produtos deve ser breve. O evento não deve assumir formato de apresentação comercial.
+
+---
+
+## Bloco 06 — Confirmação
+
+### Regra principal
+
+A confirmação acontece em **modal/overlay**, sem sair da landing page.
+
+O botão aparece no Hero e novamente no encerramento.
+
+### Modal — estado inicial
+
+**Título:**
+
+> **Confirme sua presença**
+
+**Texto:**
+
+> Será uma alegria ter você conosco nesta noite especial.
+
+### Campos
+
+**Nome** — obrigatório  
+**WhatsApp** — obrigatório  
+**Resposta** — obrigatório
+
+Opções:
+
+- **CONFIRMAR MINHA PRESENÇA**
+- **NÃO PODEREI COMPARECER**
+
+### Regra de acompanhante
+
+Não exibir campo de acompanhante. O convite é individual.
+
+### Privacidade
+
+Adicionar abaixo do formulário uma nota curta com link para a política de privacidade, explicando que os dados são utilizados para confirmação, organização do evento e relacionamento planejado pela Santa Luzia.
+
+---
+
+## Bloco 07 — Modal de confirmação concluída
+
+Após confirmar:
+
+### Título
+
+> **Presença confirmada! ✨**
+
+### Mensagem
+
 > Estamos muito felizes em ter você conosco.
 
-A página pode revelar conteúdos adicionais após a confirmação.
+### Ação
 
-### Bloco 6 — Santa Luzia
+**CONTINUAR CONHECENDO O EVENTO**
 
-Apresentação curta da distribuidora, coerente com o posicionamento institucional do site.
+O botão fecha o modal e mantém a convidada na landing page.
 
-Mensagem-chave:
+Não oferecer:
 
-> A Santa Luzia atua na distribuição especializada em nutrição clínica, conectando profissionais e instituições a soluções para diferentes contextos de cuidado.
+- download de ingresso;
+- adicionar à agenda;
+- nova página obrigatória;
+- formulário de qualificação comercial.
 
-O texto final deve ser alinhado ao conteúdo institucional oficial da marca.
+---
 
-### Bloco 7 — Marcas parceiras
+## Bloco 08 — Santa Luzia
 
-Apresentar **Nutro** e **Pro Diet** como parte do ecossistema que estará presente no evento.
+### Objetivo
 
-Para cada marca:
+Apresentar a anfitriã sem transformar o conteúdo em propaganda.
+
+### Título sugerido
+
+> **Quem está por trás deste encontro**
+
+### Posicionamento
+
+A Santa Luzia deve ser apresentada como:
+
+- distribuidora especializada em nutrição clínica;
+- parceira dos profissionais de nutrição e do ecossistema de cuidado.
+
+### Texto inicial para desenvolvimento
+
+> A Santa Luzia Distribuidora atua na distribuição de soluções em nutrição clínica, conectando profissionais, instituições e pacientes a produtos e soluções para diferentes contextos de cuidado.
+>
+> Mais do que distribuir produtos, buscamos construir relações duradouras com os profissionais que fazem parte desse ecossistema.
+
+O texto final será refinado na etapa de copywriting.
+
+---
+
+## Bloco 09 — Marcas parceiras
+
+Marcas confirmadas:
+
+- **NUTRO**;
+- **PRODIET**.
+
+### Direção visual
+
+A apresentação pode ser unificada em uma composição editorial, desde que cada marca mantenha sua identidade e reconhecimento.
+
+Se o layout pedir maior destaque, cada marca poderá ter um card/seção própria.
+
+### NUTRO
 
 - logo oficial;
-- descrição curta;
+- descrição institucional curta;
 - proposta de valor;
-- 3 ou 4 soluções/produtos estratégicos, no máximo, quando fizer sentido;
-- link opcional para conteúdo institucional/produtos.
+- eventualmente 1–3 soluções selecionadas.
 
-### Bloco 8 — Encerramento
+### PRODIET
 
-Reforçar o caráter de homenagem e relacionamento.
+- logo oficial;
+- descrição institucional curta;
+- proposta de valor;
+- eventualmente 1–3 soluções selecionadas.
 
-Exemplo de conceito:
+### Regra comercial
 
-> Um encontro para valorizar quem transforma a nutrição em cuidado e qualidade de vida.
+Não apresentar uma vitrine extensa.
 
-CTA final:
+Não utilizar:
 
-**Contamos com você!**
+- preços;
+- descontos;
+- botão de compra;
+- catálogo completo;
+- excesso de especificações técnicas.
 
-## 4. Estado da página
+Produtos, caso sejam selecionados posteriormente, devem funcionar como **exemplos de soluções**, não como oferta comercial.
 
-A página deve apresentar conteúdos diferentes conforme o estado da convidada.
+---
+
+## Bloco 10 — Localização
+
+### Título
+
+> **Onde nos encontramos**
+
+Exibir:
+
+**YBY Condomínio Boutique**  
+Travessa Thenry, BR-316, S/N  
+Ananindeua — PA  
+CEP 67113-120
+
+Informações:
+
+- início da recepção às 19h;
+- estacionamento próprio;
+- dress code social/coquetel.
+
+### CTA
+
+**COMO CHEGAR**
+
+O botão utilizará o link de localização fornecido pela organização.
+
+---
+
+## Bloco 11 — FAQ
+
+### Posso levar acompanhante?
+
+> O convite é individual e exclusivo para a nutricionista convidada.
+
+### Qual é o traje?
+
+> Social / Coquetel.
+
+### Onde será o evento?
+
+> YBY Condomínio Boutique, em Ananindeua/PA.
+
+### Haverá estacionamento?
+
+> Sim. O condomínio possui estacionamento próprio.
+
+### Que horas começa?
+
+> A recepção começa às 19h.
+
+### Até que horas será o evento?
+
+> A programação seguirá durante a noite, com jantar e celebração. O encerramento não possui horário definido.
+
+### Como confirmo minha presença?
+
+> Clique em “Confirmar minha presença” e preencha nome e WhatsApp.
+
+### Tenho uma dúvida sobre o evento. Com quem falo?
+
+> Entre em contato pelo WhatsApp (91) 99294-4871.
+
+---
+
+## Bloco 12 — Encerramento
+
+### Conceito
+
+Fechar com emoção e reforçar a homenagem.
+
+### Título
+
+> **Uma noite para celebrar quem transforma a nutrição em cuidado.**
+
+### Texto
+
+> Esperamos você para compartilhar esse momento conosco.
+
+### CTA
+
+**CONFIRMAR MINHA PRESENÇA**
+
+O CTA abre novamente o mesmo modal.
+
+### Contato
+
+Dúvidas: **(91) 99294-4871**
+
+---
+
+# 5. Estados da experiência
 
 | Estado | Experiência |
 |---|---|
-| Convite sem resposta | CTA de confirmação |
-| Confirmada | Confirmação + conteúdo pré-evento |
-| Recusou | Mensagem de agradecimento + opção de contato futuro |
-| Evento encerrado | Experiência pós-evento |
+| Visitante não identificado | Página pública normal + CTA de confirmação |
+| Confirmou | Modal de sucesso + continua na página |
+| Recusou | Modal de agradecimento + página continua acessível |
+| Retorno no mesmo navegador | Pode preservar estado local de confirmação, sem depender disso para a regra de negócio |
+| Evento encerrado | Poderá receber versão pós-evento em etapa posterior |
 
-## 5. Requisitos de UX
+A página não deve bloquear o conteúdo para quem ainda não confirmou. A confirmação é o principal objetivo, mas não é um paywall de conteúdo.
+
+---
+
+# 6. Wireframe conceitual
+
+```text
+┌────────────────────────────────────────────┐
+│ LOGO SANTA LUZIA                           │
+│                                            │
+│ [imagem/atmosfera premium]                 │
+│                                            │
+│ Uma noite para celebrar...                 │
+│ Jantar comemorativo...                     │
+│ 29/08 · 19h · YBY                          │
+│                                            │
+│ [ CONFIRMAR MINHA PRESENÇA ]               │
+└────────────────────────────────────────────┘
+
+                ↓
+
+┌────────────────────────────────────────────┐
+│ Uma noite preparada para você              │
+│ texto emocional                            │
+└────────────────────────────────────────────┘
+
+                ↓
+
+┌────────────────────────────────────────────┐
+│ RECEPÇÃO │ CONEXÕES │ GASTRONOMIA │ FESTA │
+└────────────────────────────────────────────┘
+
+                ↓
+
+┌────────────────────────────────────────────┐
+│ DATA · HORÁRIO · LOCAL · TRAJE · ESTACION. │
+└────────────────────────────────────────────┘
+
+                ↓
+
+┌────────────────────────────────────────────┐
+│ COMO SERÁ A NOITE                          │
+│ Recepção → abertura → marcas → jantar →    │
+│ celebração                                  │
+└────────────────────────────────────────────┘
+
+                ↓
+
+┌────────────────────────────────────────────┐
+│ QUEM ESTÁ POR TRÁS DO ENCONTRO             │
+│ SANTA LUZIA                                │
+└────────────────────────────────────────────┘
+
+                ↓
+
+┌────────────────────────────────────────────┐
+│ NUTRO                         PRODIET       │
+│ marcas + soluções selecionadas              │
+└────────────────────────────────────────────┘
+
+                ↓
+
+┌────────────────────────────────────────────┐
+│ LOCALIZAÇÃO                                │
+│ YBY + COMO CHEGAR                          │
+└────────────────────────────────────────────┘
+
+                ↓
+
+┌────────────────────────────────────────────┐
+│ FAQ                                        │
+└────────────────────────────────────────────┘
+
+                ↓
+
+┌────────────────────────────────────────────┐
+│ Uma noite para celebrar...                 │
+│ [ CONFIRMAR MINHA PRESENÇA ]               │
+│ WhatsApp para dúvidas                      │
+└────────────────────────────────────────────┘
+```
+
+---
+
+# 7. Requisitos de UX/UI
 
 - mobile first;
+- excelente experiência em navegador interno do WhatsApp;
 - carregamento rápido;
-- botão de confirmação visível;
-- formulário curto;
-- boa leitura em WhatsApp browser;
-- identidade visual consistente com o convite;
-- acessibilidade básica de contraste e tamanho de fonte;
-- nenhuma etapa desnecessária entre convite e confirmação.
+- imagens otimizadas;
+- CTA principal claramente visível;
+- modal de confirmação simples e responsivo;
+- animações discretas e premium;
+- contraste adequado;
+- tipografia legível;
+- navegação vertical natural;
+- nenhuma etapa desnecessária para confirmar;
+- conteúdo comercial visualmente subordinado ao evento.
 
-## 6. Requisitos técnicos
+## Direção visual
 
-A solução deve permitir:
+A referência principal é o convite aprovado:
 
-- leitura do identificador individual;
-- consulta da convidada;
-- exibição do estado atual;
-- gravação da confirmação/recusa;
-- registro da data/hora da interação;
-- integração com o CRM;
-- disparo de eventos para automação;
-- proteção contra submissões duplicadas.
+- azul-marinho profundo;
+- dourado/champagne;
+- branco;
+- iluminação quente;
+- atmosfera sofisticada;
+- elementos botânicos/ornamentais discretos;
+- fotografia de jantar premium;
+- estética editorial e comemorativa.
 
-## 7. Regra de negócio importante
+A logo oficial da Santa Luzia deve substituir qualquer marca fictícia ou criada para composição.
 
-Confirmar presença não deve criar outra pessoa/contato no CRM.
+As logos oficiais de NUTRO e PRODIET devem ser utilizadas sem alteração de proporções ou desenho.
 
-A ação deve atualizar a relação **contato/convidada ↔ evento**.
+---
 
-Isso evita retrabalho e duplicidade de cadastro.
+# 8. Requisitos técnicos
+
+A solução deverá permitir:
+
+- registrar page views agregados;
+- registrar confirmação e recusa;
+- localizar contato existente por WhatsApp;
+- associar a resposta ao evento;
+- impedir duplicidade de confirmação para o mesmo contato/evento;
+- registrar data/hora;
+- permitir atualização posterior de presença real;
+- consultar o status pelo CRM;
+- funcionar em mobile e desktop;
+- disponibilizar política de privacidade.
+
+## Regra importante sobre o link geral
+
+Como todas as convidadas usam a mesma URL, o sistema **não pode afirmar que determinado acesso anônimo pertence a determinada nutricionista**.
+
+A associação individual começa quando o formulário de confirmação recebe os dados e o backend localiza o contato correspondente.
+
+---
+
+# 9. Conteúdo ainda a definir
+
+- textos institucionais finais da Santa Luzia;
+- textos institucionais da NUTRO;
+- textos institucionais da PRODIET;
+- produtos/soluções que eventualmente serão destacados;
+- fotos finais do ambiente;
+- imagens institucionais;
+- data limite para confirmação;
+- programação definitiva.
+
+Os textos podem ser criados pela equipe do projeto; não é necessário obter textos oficiais externos das marcas para avançar.
+
+---
+
+# 10. Fora do escopo da primeira versão
+
+- venda de produtos;
+- checkout;
+- catálogo completo;
+- automação de WhatsApp;
+- link individual por convidada;
+- token de convite;
+- formulário extenso de qualificação;
+- sistema de ingressos;
+- agenda/calendário;
+- área restrita da convidada.
