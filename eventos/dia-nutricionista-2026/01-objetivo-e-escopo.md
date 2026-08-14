@@ -1,102 +1,150 @@
 # 01 — Objetivo e escopo
 
-## 1. Contexto
+## 1. Identidade do projeto
 
-A Santa Luzia realizará um **jantar comemorativo em homenagem ao Dia do Nutricionista**, previsto para 29/08/2026.
+**Experiência Digital — Dia do Nutricionista 2026**
 
-O convite será distribuído individualmente pelo WhatsApp. A proposta deste projeto é transformar esse convite em uma experiência digital de relacionamento, em vez de tratar a confirmação como uma atividade isolada.
+A Santa Luzia realizará um jantar comemorativo em homenagem ao Dia do Nutricionista em **29/08/2026**.
 
-## 2. Público principal
+O convite será distribuído individualmente pelo WhatsApp. A landing page será a extensão digital desse convite e deverá combinar experiência, confirmação de presença e aproximação institucional com a Santa Luzia e suas marcas parceiras.
 
-Nutricionistas convidadas pela Santa Luzia, priorizadas por potencial de relacionamento, atuação profissional e aderência aos canais e soluções da empresa.
+A landing page não será tratada como página de vendas nem como simples formulário de RSVP.
 
-Possíveis perfis de interesse:
+## 2. Dados confirmados do evento
 
-- Home Care;
-- hospitais e instituições;
-- clínicas;
-- consultórios;
-- profissionais ligados à terapia nutricional;
-- profissionais em relacionamento com parceiros da Santa Luzia.
+| Item | Definição |
+|---|---|
+| Data | 29/08/2026 |
+| Início | 19h |
+| Término | Sem horário exato; a celebração poderá avançar após 00h |
+| Local | YBY Condomínio Boutique — Ananindeua/PA |
+| Endereço | Travessa Thenry, BR-316, S/N, Ananindeua - PA, 67113-120 |
+| Público | Nutricionistas convidadas |
+| Quantidade estimada | Aproximadamente 60 pessoas |
+| Convite | Individual, sem acompanhante |
+| Dress code | Social / Coquetel |
+| Estacionamento | Próprio do condomínio |
+| Contato para dúvidas | (91) 99294-4871 |
 
-A segmentação detalhada deve ser definida antes da distribuição dos convites.
+Link de localização fornecido para o evento:
+https://share.google/31qdnR1U4QYddPAwy
 
 ## 3. Objetivos de negócio
 
 ### Objetivo primário
 
-Maximizar a presença das nutricionistas convidadas e fortalecer o relacionamento com elas.
+Maximizar a presença das nutricionistas convidadas e fortalecer o relacionamento entre elas e a Santa Luzia.
 
 ### Objetivos secundários
 
-- ampliar a proximidade com nutricionistas estratégicas;
-- apresentar o posicionamento da Santa Luzia como distribuidora especializada em nutrição clínica;
-- apresentar Nutro e Pro Diet de maneira coerente com a experiência do evento;
-- identificar interesses e perfis relevantes para ações futuras;
-- criar uma base organizada para follow-up pós-evento;
+- aproximar nutricionistas estratégicas da Santa Luzia;
+- posicionar a Santa Luzia simultaneamente como **distribuidora especializada em nutrição clínica** e **parceira dos profissionais de nutrição**;
+- apresentar NUTRO e PRODIET de maneira elegante e contextualizada;
+- gerar conhecimento sobre os perfis profissionais das convidadas;
+- identificar potenciais caminhos de parceria futura;
+- criar base organizada para follow-up pós-evento;
 - produzir dados para avaliar a efetividade da ação.
 
 ## 4. Princípios da experiência
 
-### 4.1. Convite antes de venda
+### 4.1. Homenagem antes de venda
 
-A comunicação deve começar pela homenagem e pelo relacionamento. A apresentação comercial entra como conteúdo complementar.
+A comunicação começa pela valorização da nutricionista. A apresentação institucional e das marcas é complementar à experiência.
 
-### 4.2. Fricção mínima
+### 4.2. O evento é o protagonista
 
-A convidada deve conseguir confirmar presença em poucos passos, preferencialmente sem redigitar dados que a Santa Luzia já possui.
+Produtos não serão apresentados em formato de catálogo ou venda direta. Quando houver produtos destacados, eles devem aparecer como parte do ecossistema de soluções das marcas parceiras.
 
-### 4.3. Informação progressiva
+### 4.3. Fricção mínima
 
-A jornada deve revelar as informações na ordem mais natural:
+A confirmação deve exigir poucos dados e poucos passos.
 
-`Convite → detalhes do evento → confirmação → experiência/marcas → preparação → participação → pós-evento`
+### 4.4. Confirmação sem interromper a experiência
 
-### 4.4. Dados como consequência da experiência
+O CTA de confirmação abrirá um **modal/overlay na própria landing page**. A nutricionista não será enviada para outra página apenas para confirmar presença.
 
-O CRM deve registrar a jornada sem obrigar a nutricionista a preencher formulários longos.
+### 4.5. Confirmação primeiro, enriquecimento depois
 
-### 4.5. Separação entre relacionamento e operação comercial
+A confirmação deve coletar somente o necessário. Informações adicionais sobre atuação profissional serão enriquecidas posteriormente pelo CRM/equipe, sem transformar o RSVP em formulário extenso.
 
-O CRM registra relacionamento, interação, confirmação e oportunidades. O ERP/Bling continua responsável pelos processos operacionais de venda, estoque, faturamento e contas.
+### 4.6. Link geral
 
-## 5. Escopo funcional
+Será utilizado **um único link público da experiência digital para todas as convidadas**. Não haverá token, URL nominal ou identificador individual no link.
+
+Como consequência, o acesso à página poderá ser medido de forma agregada. A associação entre a visitante e o registro de CRM acontecerá quando ela informar seus dados na confirmação.
+
+### 4.7. Comunicação manual
+
+A comunicação será realizada manualmente pelo WhatsApp Business da Santa Luzia. A landing page e o CRM não devem depender de disparos automáticos de WhatsApp para funcionar.
+
+## 5. Público
+
+Nutricionistas convidadas pela Santa Luzia, priorizadas por potencial de relacionamento, atuação profissional e aderência aos canais e soluções da empresa.
+
+Perfis de interesse para relacionamento posterior:
+
+- Home Care;
+- hospitais e instituições;
+- clínicas;
+- consultórios;
+- terapia nutricional;
+- profissionais conectadas a parceiros estratégicos.
+
+## 6. Escopo funcional
 
 | Área | Entrega |
 |---|---|
-| Convite | Arte digital + distribuição individual via WhatsApp |
-| Acesso | Link individualizado por convidada |
-| Landing page | Página responsiva do evento |
-| Confirmação | Confirmar presença / informar impossibilidade |
-| CRM | Histórico da jornada e status do convite |
-| WhatsApp | Convite, lembretes, confirmação e pós-evento |
-| Conteúdo | Santa Luzia + Nutro + Pro Diet |
+| Convite | Arte digital + distribuição individual manual via WhatsApp |
+| Acesso | Link geral da experiência digital |
+| Landing page | Página responsiva, premium e mobile first |
+| Confirmação | Modal com confirmar / não poderei comparecer |
+| CRM | Registro da relação nutricionista ↔ evento e status da jornada |
+| WhatsApp | Comunicação manual pela conta Business da empresa |
+| Conteúdo | Evento + Santa Luzia + NUTRO + PRODIET |
 | Evento | Controle de presença |
 | Pós-evento | Agradecimento, conteúdo e relacionamento |
-| Métricas | Funil de convite até presença |
+| Métricas | Funil de convite, confirmação e presença |
 
-## 6. Critério de sucesso
+## 7. Posicionamento institucional
 
-O projeto será considerado funcional quando for possível identificar, para cada convidada:
+### Santa Luzia
 
-- quem recebeu o convite;
-- quem acessou;
-- quem confirmou;
-- quem recusou;
-- quem recebeu os lembretes;
-- quem compareceu;
-- qual foi o encaminhamento pós-evento.
+A Santa Luzia será apresentada como combinação de dois papéis:
 
-## 7. Decisões que ainda não estão fechadas
+1. **Distribuidora especializada em nutrição clínica**;
+2. **Parceira dos profissionais de nutrição e do ecossistema de cuidado**.
 
-- local;
-- horário;
-- capacidade do evento;
-- lista final de convidadas;
-- regra de acompanhante, caso exista;
-- tecnologia da landing page;
-- mecanismo de identificação individual;
-- provedor/API oficial para WhatsApp;
-- responsável pela atualização de presença durante o evento;
-- critérios de segmentação pós-evento;
-- política de uso e retenção dos dados coletados.
+O texto institucional será criado especificamente para a experiência, sem depender de texto previamente fornecido.
+
+### Marcas parceiras
+
+As únicas marcas parceiras confirmadas para a experiência são:
+
+- **NUTRO**;
+- **PRODIET**.
+
+Os textos institucionais das duas marcas também serão criados para a página.
+
+## 8. Critério de sucesso
+
+O projeto será considerado funcional quando for possível identificar, para cada convidada que confirmar:
+
+- contato correspondente no CRM;
+- status da participação;
+- data/hora da confirmação;
+- eventual recusa;
+- presença real no evento;
+- encaminhamento pós-evento.
+
+Além disso, a operação deve permitir acompanhar o volume agregado de acessos à experiência digital.
+
+## 9. Decisões ainda pendentes
+
+- data limite para confirmação;
+- sequência final da programação;
+- seleção de produtos/soluções a serem destacados;
+- fotos finais e ativos visuais;
+- responsável pelo check-in;
+- política de uso e retenção dos dados;
+- critérios definitivos de segmentação pós-evento;
+- tecnologia e implementação visual da landing page.
