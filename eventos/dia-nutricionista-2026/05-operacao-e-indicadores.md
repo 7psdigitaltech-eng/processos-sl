@@ -4,28 +4,33 @@
 
 ### Fase A — Preparação
 
-- definir data, horário e local;
-- fechar capacidade;
+- fechar data, horário e local;
+- fechar capacidade estimada;
 - fechar lista de convidadas;
 - validar dados de contato;
 - segmentar convidadas;
 - aprovar identidade visual;
+- finalizar textos;
 - finalizar landing page;
-- configurar CRM e automações;
-- testar fluxo ponta a ponta.
+- configurar CRM e Supabase;
+- testar fluxo ponta a ponta;
+- definir responsável pelo check-in;
+- definir prazo de confirmação.
 
 ### Fase B — Distribuição
 
 - preparar lote de convites;
-- enviar individualmente pelo WhatsApp;
-- monitorar entrega e acesso;
-- acompanhar pendências.
+- enviar individualmente pelo WhatsApp Business;
+- registrar envio no CRM conforme operação definida;
+- acompanhar dúvidas;
+- acompanhar confirmações.
 
 ### Fase C — Confirmação
 
 - acompanhar confirmadas;
 - acompanhar recusas;
-- executar lembretes para pendentes;
+- identificar pendentes;
+- executar lembretes manuais;
 - consolidar estimativa de presença.
 
 ### Fase D — Pré-evento
@@ -33,14 +38,20 @@
 - enviar orientações;
 - confirmar logística;
 - preparar lista operacional de presença;
-- preparar equipe responsável pelo check-in.
+- preparar equipe responsável pelo check-in;
+- alinhar abordagem de relacionamento da equipe;
+- definir quem será responsável por registrar informações relevantes sobre as convidadas.
 
 ### Fase E — Evento
 
+- realizar recepção;
 - realizar check-in;
 - registrar presença;
 - tratar cancelamentos/no-show;
-- registrar interações relevantes;
+- realizar apresentação institucional breve;
+- realizar apresentação breve de NUTRO e PRODIET;
+- estimular networking natural;
+- registrar interações e oportunidades relevantes;
 - capturar fotos e materiais autorizados para pós-evento.
 
 ### Fase F — Pós-evento
@@ -54,16 +65,16 @@
 
 ## 2. Responsabilidades mínimas
 
-| Atividade | Responsável a definir |
+| Atividade | Responsável |
 |---|---|
-| Lista de convidadas | Comercial/gestão |
-| Arte do convite | Marketing/design |
+| Lista de convidadas | A definir |
+| Arte do convite | A definir |
 | Landing page | Tecnologia/marketing |
 | CRM | Operação/comercial |
-| Automação WhatsApp | Tecnologia/operação |
-| Confirmações | Automação + responsável operacional |
-| Check-in | Equipe do evento |
-| Conteúdo pós-evento | Marketing |
+| Confirmações | Operação/comercial |
+| WhatsApp | Equipe Santa Luzia — manual |
+| Check-in | A definir |
+| Conteúdo pós-evento | A definir |
 | Follow-up | Comercial/relacionamento |
 | Relatório final | Gestão |
 
@@ -74,9 +85,9 @@
 ```text
 CONVIDADAS
    ↓
-ENVIADOS
+CONVITES ENVIADOS
    ↓
-ACESSARAM
+ACESSOS À EXPERIÊNCIA
    ↓
 CONFIRMARAM
    ↓
@@ -87,48 +98,67 @@ COMPARECERAM
 
 | KPI | Fórmula conceitual |
 |---|---|
-| Taxa de entrega | enviados / convidados |
-| Taxa de acesso | acessos / enviados |
-| Taxa de confirmação | confirmadas / acessos ou enviados |
+| Taxa de envio | convites registrados / convidadas |
+| Taxa de acesso | acessos / convites registrados |
+| Taxa de confirmação | confirmadas / convidadas |
 | Taxa de presença | presentes / confirmadas |
 | No-show | ausentes / confirmadas |
-| Cobertura do CRM | convidadas com registro / convidados |
-| Resposta a follow-up | interações / contatos pós-evento |
+| Cobertura do CRM | convidadas com relação evento/contato / convidadas |
+| Follow-up realizado | contatos com follow-up / contatos que demandavam ação |
 
-Os denominadores definitivos devem ser padronizados antes do relatório para evitar interpretações diferentes.
+### Observação importante
+
+Como o link da landing page é geral, o indicador de acesso é **agregado**. Não utilizar acesso anônimo para afirmar que uma determinada nutricionista visitou a página.
 
 ## 4. Indicadores de relacionamento
 
 Além do funil operacional, medir:
 
-- novas nutricionistas qualificadas para relacionamento;
+- nutricionistas novas para a Santa Luzia;
 - nutricionistas com perfil Home Care;
 - nutricionistas com atuação hospitalar;
-- nutricionistas com relacionamento ativo antes do evento;
-- contatos que avançaram para nova interação após o evento;
-- oportunidades comerciais identificadas, sem atribuir a venda automaticamente ao evento.
+- nutricionistas com clínica/consultório;
+- profissionais com relacionamento ativo antes do evento;
+- contatos com interação relevante durante o evento;
+- contatos que avançaram para nova interação pós-evento;
+- oportunidades de parceria identificadas;
+- oportunidades comerciais identificadas posteriormente.
 
 ## 5. Registro de presença
 
-A presença física deve ser tratada como dado operacional do evento.
-
 Recomendação:
 
-- lista digital de convidadas confirmadas;
+- lista digital de confirmadas;
 - busca rápida por nome/telefone;
 - marcação de presença;
 - registro da hora, quando útil;
 - possibilidade de tratamento manual de exceções.
 
-## 6. Relatório final
+A presença deve atualizar a mesma relação contato ↔ evento.
 
-O relatório deve responder:
+## 6. Operação de relacionamento no evento
+
+A equipe deve ter orientação prévia para conversar com as convidadas sem transformar o jantar em prospecção agressiva.
+
+Informações úteis para identificar:
+
+- onde a profissional atua;
+- tipo de atendimento;
+- relação com Home Care;
+- atuação hospitalar;
+- atuação clínica;
+- interesse por soluções de nutrição clínica;
+- potenciais conexões/parcerias.
+
+Essas informações devem ser registradas depois, no CRM, e não em formulários longos durante a festa.
+
+## 7. Relatório final
 
 ### Alcance
 
 - quantas nutricionistas foram convidadas?
-- quantas receberam?
-- quantas acessaram?
+- quantos convites foram enviados?
+- quantos acessos ocorreram?
 
 ### Conversão
 
@@ -141,7 +171,8 @@ O relatório deve responder:
 
 - quantas eram novas para a Santa Luzia?
 - quantas pertencem a segmentos estratégicos?
-- quantas tiveram interação pós-evento?
+- quantas tiveram interação relevante?
+- quantas receberam follow-up?
 
 ### Comercial
 
